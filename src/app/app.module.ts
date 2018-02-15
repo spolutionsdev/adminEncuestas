@@ -11,7 +11,6 @@ import { RetosPreguntaComponent } from './retos/retos-pregunta/retos-pregunta.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { GraficoComponent } from './grafico/grafico.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { ImagenComponent } from './imagen/imagen.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { ImagenComponent } from './imagen/imagen.component';
     RetoDetalleComponent,
     RetosPreguntaComponent,
     NavbarComponent,
-    GraficoComponent,
-    ImagenComponent
+    GraficoComponent
   ],
   imports: [
     BrowserModule,

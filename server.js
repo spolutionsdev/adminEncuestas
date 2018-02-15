@@ -48,41 +48,6 @@ function listarRetos(arrRETO, callback) {
     });
 }
 
-//consulta respuestas de firebase 
-function extraerespuestas(callback) {
-    console.log('Consulta Respuestas Firebase')
-    arrId = [];
-    arrValor = [];
-    var ref = db.ref(REF_RETO + 'reto12' + '/respuestas/' + '2272676272757872');
-    ref.on("value", function(snap) {
-        snap.forEach(function(childSnap) {
-            var reg = childSnap.val();
-            var reg1 = childSnap.key;
-            //console.log('Respuestas = ', reg)
-            arrValor.push(reg);
-            arrId.push(reg1);
-        }, )
-
-        var respuesta = "{ 'id':[" + arrId + '],valor:[' + arrValor + ']}';
-
-        console.log('respuesta', respuesta);
-        console.log('arrId:', arrId);
-        callback(null, respuesta);
-    });
-}
-
-//API consulta 
-app.get("/api/respuestas/", function(req, res) {
-    var idreto = "reto12" //solo para el demo
-    console.log("-- idreto:", idreto);
-    //console.log(extraerespuestas())
-    var res = extraerespuestas();
-    console.log('res obtenerdata: ', JSON.stringify(res));
-
-});
-
-
-
 //funcion que consulta respuestas a retos por id reto 
 function listarRetoRespuesta(idreto, callback) {
     //conexion a fire base 
@@ -271,8 +236,6 @@ app.get("/api/actualizar", function(req, res) {
     });
 });
 
-
-
 app.get("/api/actualizar/reto/:id", function(req, res) {
     console.log('---Actualizar Reto---');
     var idreto = req.params.id.toLowerCase();
@@ -328,8 +291,6 @@ app.get("/api/retos", function(req, res) {
     });
 
 });
-
-
 
 app.get("/api/preguntas/:id", function(req, res) {
 

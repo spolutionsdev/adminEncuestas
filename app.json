@@ -1,6 +1,6 @@
 {
-    "name": "MEAN Admin RedPhone",
-    "description": "Admin RedPhone app using MEAN",
+    "name": "MEAN Admin Encuestas",
+    "description": "Encuestas",
     "keywords": [
         "MEAN",
         "Angular",
@@ -9,7 +9,7 @@
         "Postgress",
         "mLab"
     ],
-    "repository": "https://github.com/spsolutionsmexico/adminredphone",
+    "repository": "https://github.com/spolutionsdev/adminEncuestas",
     "success_url": "/",
     "formation": {
         "web": {

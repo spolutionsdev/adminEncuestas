@@ -14,7 +14,7 @@ export class GraficoComponent {
   chartsData: GraficoDatos[]
   constructor(private chartService: ServGraficoService) {}
   public idpregunta: string  = '0'; // Iniciamos
-  public verSeleccion: string;
+
 
   public idpreguntaai: string;
   public pieChartLabels:Array<any> = new Array(); //string[]; //= ['Acuerdo', 'Acuerdo en parte', 'Desacuerdo en parte', 'Desacuerdo', 'No deseo responder'];
@@ -22,22 +22,10 @@ export class GraficoComponent {
   public pieChartType: string = 'pie';
   
   
-  /**
-   * obtenerid del combo
-   */
-  public obtenerid() {
-    this.verSeleccion = this.idpregunta;
-    console.log("Call value select",this.verSeleccion);
-  }
-
-
   public obtenerDatoGrap(): void {
-    this.pieChartData = [];
-    this.pieChartLabels = [];
-    console.log("Call actualizar reto button",this.verSeleccion);
-    this.chartsData = null;
-    console.log('Wipe chartsData:',this.chartsData);
-    this.chartService.getDatosGrap(this.verSeleccion).then((chartsData: GraficoDatos[]) => {
+    console.log("Call actualizar reto button");
+    var verSeleccion = this.idpregunta;
+    this.chartService.getDatosGrap(verSeleccion).then((chartsData: GraficoDatos[]) => {
       this.chartsData = chartsData.map((chartsData) => {
         console.log('this.chartsData: ',chartsData.respuesta);
         this.pieChartLabels.push(chartsData.respuesta);
