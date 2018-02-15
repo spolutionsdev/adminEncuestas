@@ -8,7 +8,7 @@ var firebase = require('firebase');
 var config = {
     apiKey: process.env.FBASE_APIKEY, //"AIzaSyCsVB58GbuUmkwSSv4WAlk3FOuU786IrEg",
     authDomain: process.env.AUTH_DOMAIN, //"cocacola-redphone.firebaseapp.com",
-    databaseURL: process.env.FB_DB_URL, //"https://cocacola-redphone.firebaseio.com",
+    databaseURL: process.env.FB_DB_URL, //"https://encuestas-bff3b.firebaseio.com/",
     projectId: process.env.PROJECT_ID, //"cocacola-redphone",
     storageBucket: "",
     messagingSenderId: process.env.MESSAGING_SERNDER_ID //"634647561747"
@@ -317,7 +317,7 @@ app.get("/api/respuestagrap/:id", function(req, res) {
     var idpreguntaai = req.params.id.toLowerCase();
     console.log('-- idpreguntaai: ', idpreguntaai);
 
-    var textqry = 'SELECT distinct respuesta.respuesta, idpreguntaai, COUNT( * ) as rep FROM respuesta where idreto = \'reto10\' and idpreguntaai=\'' + idpreguntaai + '\' GROUP BY idpreguntaai , respuesta.respuesta, idpreguntaai HAVING count(*) > 0  order by idpreguntaai';
+    var textqry = 'SELECT distinct respuesta.respuesta, idpreguntaai, COUNT( * ) as rep FROM respuesta where idreto = \'enc10\' and idpreguntaai=\'' + idpreguntaai + '\' GROUP BY idpreguntaai , respuesta.respuesta, idpreguntaai HAVING count(*) > 0  order by idpreguntaai';
     var lib = new condblib.condblib();
     lib.obtenerdata(textqry, function(textqry, resDB) {
         console.log('res obtenerdata: ', JSON.stringify(resDB));

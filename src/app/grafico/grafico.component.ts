@@ -24,6 +24,7 @@ export class GraficoComponent {
   
   public obtenerDatoGrap(): void {
     console.log("Call actualizar reto button");
+    console.log("Id preguntaai",this.idpregunta)
     var verSeleccion = this.idpregunta;
     this.chartService.getDatosGrap(verSeleccion).then((chartsData: GraficoDatos[]) => {
       this.chartsData = chartsData.map((chartsData) => {
