@@ -29,6 +29,7 @@
         "core-js": "^2.4.1",
         "express": "^4.15.2",
         "firebase": "4.5.2",
+        "firebase-admin": "^5.9.0",
         "mongodb": "^2.2.26",
         "ng2-charts": "1.6.0",
         "pg": "7.3.0",
