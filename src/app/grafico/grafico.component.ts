@@ -26,6 +26,7 @@ export class GraficoComponent {
     console.log("Call actualizar reto button");
     console.log("Id preguntaai",this.idpregunta)
     var verSeleccion = this.idpregunta;
+    this.chartsData = null;
     this.chartService.getDatosGrap(verSeleccion).then((chartsData: GraficoDatos[]) => {
       this.chartsData = chartsData.map((chartsData) => {
         console.log('this.chartsData: ',chartsData.respuesta);
@@ -36,8 +37,8 @@ export class GraficoComponent {
       });
     });
   }
-  
- 
+
+
 
 }
   
