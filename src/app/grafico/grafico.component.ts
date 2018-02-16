@@ -23,10 +23,13 @@ export class GraficoComponent {
   
   
   public obtenerDatoGrap(): void {
+    this.pieChartData = [];
+    this.pieChartLabels = [];
     console.log("Call actualizar reto button");
     console.log("Id preguntaai",this.idpregunta)
     var verSeleccion = this.idpregunta;
     this.chartsData = null;
+    console.log('Wipe chartsData:', this.chartsData);
     this.chartService.getDatosGrap(verSeleccion).then((chartsData: GraficoDatos[]) => {
       this.chartsData = chartsData.map((chartsData) => {
         console.log('this.chartsData: ',chartsData.respuesta);
